@@ -28,7 +28,7 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-10">
             <div className="md:col-span-2 text-text-secondary space-y-4">
               <p>
-                Hello! My name is [Your Name] and I enjoy creating things that live on the internet. My interest in web development started back when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is a lot of fun!
+                Hello! My name is Limuel Portugal and I enjoy creating things that live on the internet. My interest in web development started back when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is a lot of fun!
               </p>
               <p>
                 Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.

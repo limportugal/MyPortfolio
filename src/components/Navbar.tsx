@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,13 +23,13 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-primary/90 backdrop-blur-sm shadow-lg py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <a href="#" className="text-accent font-mono text-2xl font-bold border-2 border-accent p-1 rounded hover:bg-accent/10 transition-colors">
-          P
+          DevByLim
         </a>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <ol className="flex space-x-8">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <li key={link.name}>
                 <a href={link.href} className="font-mono text-sm text-text-primary hover:text-accent transition-colors">
                   {/* <span className="text-accent mr-1">0{index + 1}.</span> */}

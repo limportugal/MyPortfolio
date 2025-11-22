@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const GitHub: React.FC = () => {
-  const username = "PlayerUnknows"; // Replace with your actual GitHub username
+  const username = "PlayerUnknows"; // Your GitHub username
 
   return (
     <section id="github" className="py-24 px-6 md:px-24 bg-secondary">
@@ -14,7 +14,7 @@ const GitHub: React.FC = () => {
           className="flex items-center mb-16"
         >
           <h2 className="text-2xl md:text-3xl font-bold text-text-primary mr-4">
-            <span className="text-accent font-mono text-xl mr-2"></span>
+            <span className="text-accent font-mono text-xl mr-2">03.</span>
             GitHub Activities
           </h2>
           <div className="h-px bg-tertiary flex-grow max-w-xs"></div>
@@ -26,8 +26,8 @@ const GitHub: React.FC = () => {
           viewport={{ once: true }}
           className="space-y-8"
         >
-          {/* GitHub Contribution Graph */}
-          <div className="bg-primary p-6 rounded-lg border border-tertiary">
+          {/* GitHub Contribution Calendar */}
+          <div className="bg-primary p-6 rounded-lg border border-tertiary overflow-hidden">
             <a 
               href={`https://github.com/${username}`}
               target="_blank"
@@ -36,14 +36,24 @@ const GitHub: React.FC = () => {
             >
               @{username}
             </a>
-            <img 
-              src={`https://ghchart.rshah.org/${username}`}
-              alt="GitHub Contribution Chart"
-              className="w-full rounded"
-            />
-            <p className="text-text-secondary text-sm mt-4 text-center font-mono">
-              Last 12 months of contributions
-            </p>
+            <div className="bg-[#0d1117] p-4 rounded-lg border border-[#30363d]">
+              <h3 className="text-text-primary text-sm mb-3">
+                <span className="text-accent font-semibold">321</span> contributions in the last year
+              </h3>
+              <img 
+                src={`https://ghchart.rshah.org/39d353/${username}`}
+                alt="GitHub Contribution Calendar"
+                className="w-full rounded"
+                style={{ 
+                  filter: 'brightness(1.5) saturate(1.3)',
+                  backgroundColor: '#0d1117',
+                  imageRendering: 'crisp-edges' as const
+                }}
+              />
+              <p className="text-text-secondary text-xs mt-2 text-right font-mono">
+                Live data from GitHub
+              </p>
+            </div>
           </div>
 
           {/* GitHub Stats Cards */}
@@ -86,13 +96,13 @@ const GitHub: React.FC = () => {
           </div>
 
           {/* GitHub Streak */}
-          <div className="bg-primary p-4 rounded-lg border border-tertiary">
+          {/* <div className="bg-primary p-4 rounded-lg border border-tertiary">
             <img 
               src={`https://github-readme-streak-stats.herokuapp.com/?user=${username}&theme=radical&hide_border=true&background=0a192f&ring=64ffda&fire=64ffda&currStreakLabel=ccd6f6`}
               alt="GitHub Streak"
               className="w-full"
             />
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

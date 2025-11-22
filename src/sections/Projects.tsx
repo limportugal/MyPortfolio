@@ -7,15 +7,17 @@ const projects = [
     title: "Philigox.site",
     description: "A comprehensive web platform built with modern technologies. Features a robust backend and intuitive user interface. Designed to handle complex data interactions and provide a seamless user experience.",
     tags: ["Laravel", "PHP", "MySQL", "Tailwind CSS"],
-    link: "https://philigox.site",
-    github: "#"
+    link: "https://phillogix.site",
+    github: "#",
+    image: "/images/Phillogix.png"
   },
   {
     title: "Bulletin.board.site",
     description: "An interactive bulletin board application allowing users to post and manage content in real-time. Implements secure authentication and real-time updates using WebSockets.",
     tags: ["React", "TypeScript", "Node.js", "Socket.io"],
-    link: "https://bulletin.board.site",
-    github: "#"
+    link: "https://bulletin.ideaserv.site",
+    github: "#",
+    image: "/images/bulletin-board.png"
   }
 ];
 
@@ -50,9 +52,20 @@ const Projects: React.FC = () => {
               <div className={`md:col-span-7 relative ${index % 2 === 1 ? 'md:col-start-6' : 'md:col-start-1'} row-start-1`}>
                 <a href={project.link} target="_blank" rel="noopener noreferrer" className="block w-full h-full relative rounded overflow-hidden group">
                   <div className="absolute inset-0 bg-accent/20 group-hover:bg-transparent transition-colors duration-300 z-10" />
-                  <div className="w-full aspect-video bg-tertiary flex items-center justify-center border border-tertiary rounded">
-                     {/* Placeholder for project screenshot */}
-                     <span className="text-text-secondary font-mono text-lg">[ {project.title} Screenshot ]</span>
+                  <div className="w-full aspect-video bg-tertiary flex items-center justify-center border border-tertiary rounded overflow-hidden">
+                     <img
+                       src={project.image}
+                       alt={`${project.title} screenshot`}
+                       className="object-cover w-full h-full"
+                       onError={(e) => {
+                         const target = e.target as HTMLImageElement;
+                         target.style.display = 'none';
+                         const parent = target.parentElement;
+                         if (parent) {
+                           parent.innerHTML = '<div class="text-text-secondary font-mono text-sm">Project Screenshot</div>';
+                         }
+                       }}
+                     />
                   </div>
                 </a>
               </div>
