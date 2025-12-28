@@ -1,8 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+interface GitHubStats {
+  public_repos: number;
+  followers: number;
+  following: number;
+  created_at: string;
+}
+
+interface Repository {
+  stargazers_count: number;
+}
+
 const GitHub: React.FC = () => {
-  const username = "PlayerUnknows"; // Your GitHub username
+  const username = "limportugal"; // Your GitHub username
+  // const [langsError, setLangsError] = useState(true);
+  
+  const [githubStats, setGithubStats] = useState<GitHubStats | null>(null);
+  const [totalStars, setTotalStars] = useState<number>(0);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchGitHubData = async () => {
+      try {
+        // Fetch user stats
+        const userResponse = await fetch(`https://api.github.com/users/${username}`);
+        const userData: GitHubStats = await userResponse.json();
+        setGithubStats(userData);
+
+        // Fetch repositories to calculate total stars
+        const reposResponse = await fetch(`https://api.github.com/users/${username}/repos`);
+        const reposData: Repository[] = await reposResponse.json();
+        const stars = reposData.reduce((total, repo) => total + repo.stargazers_count, 0);
+        setTotalStars(stars);
+
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching GitHub data:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchGitHubData();
+  }, [username]);
 
   return (
     <section id="github" className="py-24 px-6 md:px-24 bg-secondary">
@@ -38,18 +78,32 @@ const GitHub: React.FC = () => {
             </a>
             <div className="bg-[#0d1117] p-4 rounded-lg border border-[#30363d]">
               <h3 className="text-text-primary text-sm mb-3">
-                <span className="text-accent font-semibold">321</span> contributions in the last year
+                <span className="text-accent font-semibold">362</span> contributions in the last year
               </h3>
-              <img 
-                src={`https://ghchart.rshah.org/39d353/${username}`}
-                alt="GitHub Contribution Calendar"
-                className="w-full rounded"
-                style={{ 
-                  filter: 'brightness(1.5) saturate(1.3)',
-                  backgroundColor: '#0d1117',
-                  imageRendering: 'crisp-edges' as const
-                }}
-              />
+              <div className="w-full bg-[#0d1117] p-4 rounded border border-[#21262d] overflow-x-auto">
+                {/* GitHub contribution calendar image */}
+                <img 
+                  src="/images/githubpic.png"
+                  alt="GitHub Contribution Calendar"
+                  className="w-full rounded"
+                  style={{ 
+                    backgroundColor: '#0d1117',
+                    imageRendering: 'crisp-edges' as const
+                  }}
+                />
+                
+                {/* Click to see more link */}
+                <div className="text-center mt-4">
+                  <a 
+                    href="https://github.com/limportugal"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline font-mono text-sm transition-colors"
+                  >
+                    Click to see more updated contribution →
+                  </a>
+                </div>
+              </div>
               <p className="text-text-secondary text-xs mt-2 text-right font-mono">
                 Live data from GitHub
               </p>
@@ -61,39 +115,29 @@ const GitHub: React.FC = () => {
             <div className="bg-primary p-6 rounded-lg border border-tertiary text-center hover:border-accent transition-colors">
               <div className="text-accent text-4xl mb-2">📊</div>
               <h3 className="text-text-primary font-bold text-xl mb-2">Total Repositories</h3>
-              <p className="text-text-secondary font-mono">View on GitHub</p>
+              <p className="text-accent font-mono text-2xl font-bold">
+                {loading ? '...' : githubStats?.public_repos || '0'}
+              </p>
             </div>
 
             <div className="bg-primary p-6 rounded-lg border border-tertiary text-center hover:border-accent transition-colors">
               <div className="text-accent text-4xl mb-2">⭐</div>
               <h3 className="text-text-primary font-bold text-xl mb-2">Total Stars</h3>
-              <p className="text-text-secondary font-mono">View on GitHub</p>
+              <p className="text-accent font-mono text-2xl font-bold">
+                {loading ? '...' : totalStars}
+              </p>
             </div>
 
             <div className="bg-primary p-6 rounded-lg border border-tertiary text-center hover:border-accent transition-colors">
-              <div className="text-accent text-4xl mb-2">💻</div>
-              <h3 className="text-text-primary font-bold text-xl mb-2">Total Commits</h3>
-              <p className="text-text-secondary font-mono">View on GitHub</p>
+              <div className="text-accent text-4xl mb-2">👥</div>
+              <h3 className="text-text-primary font-bold text-xl mb-2">Followers</h3>
+              <p className="text-accent font-mono text-2xl font-bold">
+                {loading ? '...' : githubStats?.followers || '0'}
+              </p>
             </div>
           </div>
 
-          {/* GitHub Stats Image */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-primary p-4 rounded-lg border border-tertiary">
-              <img 
-                src={`https://github-readme-stats.vercel.app/api?username=${username}&show_icons=true&theme=radical&hide_border=true&bg_color=0a192f&title_color=64ffda&text_color=ccd6f6&icon_color=64ffda`}
-                alt="GitHub Stats"
-                className="w-full"
-              />
-            </div>
-            <div className="bg-primary p-4 rounded-lg border border-tertiary">
-              <img 
-                src={`https://github-readme-stats.vercel.app/api/top-langs/?username=${username}&layout=compact&theme=radical&hide_border=true&bg_color=0a192f&title_color=64ffda&text_color=ccd6f6`}
-                alt="Top Languages"
-                className="w-full"
-              />
-            </div>
-          </div>
+
 
           {/* GitHub Streak */}
           {/* <div className="bg-primary p-4 rounded-lg border border-tertiary">

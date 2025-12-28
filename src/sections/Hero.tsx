@@ -18,9 +18,8 @@ const Hero: React.FC = () => {
             I build things for the web.
           </h2>
           <p className="text-text-secondary max-w-xl text-lg mb-12 leading-relaxed">
-            I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.
+            Hi, I’m Limuel Portugal. I build web applications and internal tools using Laravel and React
           </p>
-          
           <a 
             href="#projects" 
             className="inline-block px-8 py-4 border border-accent text-accent font-mono rounded hover:bg-accent/10 transition-colors duration-300"

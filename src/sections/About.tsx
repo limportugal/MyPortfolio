@@ -28,10 +28,8 @@ const About: React.FC = () => {
           <div className="grid md:grid-cols-3 gap-10">
             <div className="md:col-span-2 text-text-secondary space-y-4">
               <p>
-                Hello! My name is Limuel Portugal and I enjoy creating things that live on the internet. My interest in web development started back when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is a lot of fun!
-              </p>
-              <p>
-                Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences for a variety of clients.
+                Hello! I’m Limuel Portugal, a junior software engineer working on company websites and internal platforms, 
+                including a digital bulletin board system. I focus on writing clean, maintainable code and delivering practical, user-friendly solutions.
               </p>
               <p>
                 Here are a few technologies I've been working with recently:
@@ -52,7 +50,15 @@ const About: React.FC = () => {
                 <div className="w-full max-w-[300px] aspect-square bg-accent/20 rounded hover:bg-transparent transition-colors duration-300 cursor-pointer">
                   {/* Placeholder for profile image */}
                   <div className="w-full h-full border-2 border-accent rounded flex items-center justify-center text-accent/50">
-                    [Image]
+                     <img 
+                        src="/images/my_pic.jpg"
+                        alt="Me"
+                        className="w-full rounded"
+                        style={{ 
+                          backgroundColor: '#0d1117',
+                          imageRendering: 'crisp-edges' as const
+                        }}
+                    />
                   </div>
                 </div>
               </div>
