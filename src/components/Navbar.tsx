@@ -38,7 +38,7 @@ const Navbar = () => {
               </li>
             ))}
           </ol>
-          <a href="/resume.pdf" className="px-4 py-2 border border-accent text-accent font-mono text-sm rounded hover:bg-accent/10 transition-colors">
+          <a href="/files/Lim.pdf" className="px-4 py-2 border border-accent text-accent font-mono text-sm rounded hover:bg-accent/10 transition-colors">
             Resume
           </a>
         </div>
@@ -71,7 +71,7 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <a href="/resume.pdf" className="px-8 py-3 border border-accent text-accent font-mono rounded hover:bg-accent/10">
+            <a href="/files/Lim.pdf" className="px-8 py-3 border border-accent text-accent font-mono rounded hover:bg-accent/10">
               Resume
             </a>
           </div>

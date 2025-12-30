@@ -9,7 +9,7 @@ const projects = [
     tags: ["Laravel", "PHP", "MySQL", "Tailwind"],
     link: "https://phillogix.site",
     github: "#",
-    images: ["/images/Phillogix.png", "/images/my_pic.jpg"] // Changed to array
+    images: ["/images/Phillogix.png"] // Changed to array
   },
   {
     title: "Bulletin.board.site",
@@ -17,7 +17,11 @@ const projects = [
     tags: ["Laravel", "PHP", "MySQL", "Tailwind", "React", "TypeScript", "Node.js"],
     link: "https://bulletin.ideaserv.site",
     github: "https://github.com/limportugal/bulletin_board",
-    images: ["/images/my_pic.jpg"] // Changed to array
+    images: ["/images/bulletin_boardPic1.png", 
+             "/images/bulletin_boardPic2.png",
+              "/images/bulletin_boardPic3.png", 
+              "/images/bulletin_boardPic1.png"
+            ] // Changed to array
   }
 ];
 

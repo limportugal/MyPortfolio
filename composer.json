@@ -1,0 +1,15 @@
+{
+    "name": "limue/my-portfolio",
+    "autoload": {
+        "psr-4": {
+            "Limue\\MyPortfolio\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Limuel Portugal",
+            "email": "limuelportugal@gmail.com"
+        }
+    ],
+    "require": {}
+}

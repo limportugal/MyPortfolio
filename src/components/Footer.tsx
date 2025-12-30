@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         rel="noopener noreferrer"
         className="text-text-secondary font-mono text-xs hover:text-accent transition-colors"
       >
-        <p className="mb-2">Designed & Built by [Your Name]</p>
+        <p className="mb-2">Designed & Built by Limuel Portugal </p>
         <p>Inspired by Brittany Chiang</p>
       </a>
     </footer>
