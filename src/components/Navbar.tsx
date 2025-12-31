@@ -22,8 +22,19 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-primary/90 backdrop-blur-sm shadow-lg py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        <a href="#" className="text-accent font-mono text-2xl font-bold border-2 border-accent p-1 rounded hover:bg-accent/10 transition-colors">
-          DevByLim
+        <a href="#" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+          <img 
+            src="/chibi.svg"
+            alt="DevByLim Logo"
+            className="w-10 h-10 rounded-full"
+            style={{ 
+              backgroundColor: '#0d1117',
+              imageRendering: 'crisp-edges' as const
+            }}
+          />
+          <span className="text-accent font-mono text-xl font-bold hidden sm:block">
+            Lim.dev
+          </span>
         </a>
 
         {/* Desktop Menu */}
