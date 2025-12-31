@@ -9,7 +9,13 @@ const projects = [
     tags: ["Laravel", "PHP", "MySQL", "Tailwind"],
     link: "https://phillogix.site",
     github: "#",
-    images: ["/images/Phillogix.png"] // Changed to array
+    images: ["/images/Phillogix.png",
+              "/images/Phillogix2.png",
+              "/images/Phillogix3.png",
+              "/images/Phillogix4.png",
+              "/images/Phillogix5.png",
+              "/images/Phillogix6.png",
+    ] // Changed to array
   },
   {
     title: "Bulletin.board.site",
