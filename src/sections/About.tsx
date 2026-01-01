@@ -49,9 +49,9 @@ const About: React.FC = () => {
               <div className="relative z-10">
                 <div className="w-full max-w-[300px] aspect-square bg-accent/20 rounded hover:bg-transparent transition-colors duration-300 cursor-pointer">
                   {/* Placeholder for profile image */}
-                  <div className="w-full h-full border-2 border-accent rounded flex items-center justify-center text-accent/50">
+                  {/* <div className="w-full h-full border-2 border-accent rounded flex items-center justify-center text-accent/50">
                      <img 
-                        src="/images/my_pic.jpg"
+                        src="/images/2v2_me.png"
                         alt="Me"
                         className="w-full rounded"
                         style={{ 
@@ -59,7 +59,7 @@ const About: React.FC = () => {
                           imageRendering: 'crisp-edges' as const
                         }}
                     />
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className="absolute top-5 left-5 w-full max-w-[300px] aspect-square border-2 border-accent rounded z-0 group-hover:top-4 group-hover:left-4 transition-all duration-300"></div>
